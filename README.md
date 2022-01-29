@@ -18,6 +18,9 @@
 - Solidity Provides us Structs to create more complex dtypes from the ones that it provides us
 
 - Arrays :
+
   - Fixed array : uint[2] fixedArray;
   - Dynamic array : uint[] dynamicArray;
   - Public array : uint[2] public publicFixedArray;
+
+- If function parameter contain array, struct, string, mappings then they should have memory keyword for those parameters.
