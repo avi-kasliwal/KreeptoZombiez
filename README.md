@@ -42,3 +42,7 @@
 
 - Events are a way for your contract to communicate that something happened on the blockchain to your app front-end, which can be 'listening' for certain events and take action when they happen.
   - bavkedn to frontend communication.
+
+# Lesson 2
+
+- Goal is to make the app more game-like, add multi player functionality to it. Also make a fun way of creating zombies instead of creating them randomly.
