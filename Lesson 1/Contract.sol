@@ -26,4 +26,9 @@ contract ZombieFactory {
         // since we only want 16 digit long number.
         return rand % dnaModulus;
     }
+
+    function createRandomZombie(string memory _name) public {
+        uint256 randDna = _generateRandomDna(_name);
+        _createZombie(_name, randDna);
+    }
 }
