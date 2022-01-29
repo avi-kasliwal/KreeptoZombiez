@@ -26,4 +26,9 @@
 - If function parameter contain array, struct, string, mappings then they should have memory keyword for those parameters.
 
 - Private functions only accessbile inside our contract.
+
   - Convention is to use underscore in names of private function
+
+- Function Modifiers
+  - view : when only viewing data and not writing to it
+  - pure : neither write nor read any data;
