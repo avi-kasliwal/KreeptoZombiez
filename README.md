@@ -46,3 +46,8 @@
 # Lesson 2
 
 - Goal is to make the app more game-like, add multi player functionality to it. Also make a fun way of creating zombies instead of creating them randomly.
+
+- msg.sender
+  - Global variable, available to all functions
+  - address of the person or contract who called the current function.
+  - _Note_: In Solidity, function execution always needs to start with an external caller. A contract will just sit on the blockchain doing nothing until someone calls one of its functions. So there will always be a msg.sender

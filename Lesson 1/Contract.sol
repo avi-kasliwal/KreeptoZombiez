@@ -17,9 +17,15 @@ contract ZombieFactory {
     // Map to store ownership of a zombie created.
     mapping(uint256 => address) public zombieToOwner;
 
+    // Map to get number of zombies for an account address.
+    mapping(address => uint256) ownerZombieCount;
+
     function _createZombie(string memory _name, uint256 _dna) private {
         zombies.push(Zombie(_name, _dna));
         uint256 id = zombies.length - 1;
+
+        zombieToOwner[id] = msg.sender;
+        ownerZombieCount[msg.sender]++;
 
         // trigger the event
         emit NewZombie(id, _name, _dna);
