@@ -24,3 +24,6 @@
   - Public array : uint[2] public publicFixedArray;
 
 - If function parameter contain array, struct, string, mappings then they should have memory keyword for those parameters.
+
+- Private functions only accessbile inside our contract.
+  - Convention is to use underscore in names of private function
