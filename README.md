@@ -30,5 +30,11 @@
   - Convention is to use underscore in names of private function
 
 - Function Modifiers
+
   - view : when only viewing data and not writing to it
   - pure : neither write nor read any data;
+
+- Keccak256
+  - hash function, a version of SHA3
+  - gives a 256-bit hexadecimal number
+  - takes 1 parameter of type bytes, so we need to use abi.encodePacked ()
