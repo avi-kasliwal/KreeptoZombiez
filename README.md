@@ -12,3 +12,5 @@ Zombie DNA : 16 Digit integer. Different parts of this number would give values 
 Contracts : Fundamental building blocks of ETH application.
 
 Version Pragma : All solidity codes start with ther version pragma, which decalres the version of the Sol compiler the code should use.
+
+State Variables : permanently stored in contract storage, i.e. written to ETH block chain.
