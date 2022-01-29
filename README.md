@@ -16,3 +16,8 @@
 - State Variables : permanently stored in contract storage, i.e. written to ETH block chain.
 
 - Solidity Provides us Structs to create more complex dtypes from the ones that it provides us
+
+- Arrays :
+  - Fixed array : uint[2] fixedArray;
+  - Dynamic array : uint[] dynamicArray;
+  - Public array : uint[2] public publicFixedArray;
