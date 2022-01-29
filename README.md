@@ -35,6 +35,10 @@
   - pure : neither write nor read any data;
 
 - Keccak256
+
   - hash function, a version of SHA3
   - gives a 256-bit hexadecimal number
   - takes 1 parameter of type bytes, so we need to use abi.encodePacked ()
+
+- Events are a way for your contract to communicate that something happened on the blockchain to your app front-end, which can be 'listening' for certain events and take action when they happen.
+  - bavkedn to frontend communication.
