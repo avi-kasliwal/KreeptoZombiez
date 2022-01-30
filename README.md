@@ -60,7 +60,11 @@
   - Memory -> creates a copy.
 
 - Function Visibility
+
   - Public
   - Private
   - Internal : Similar as private but also accesible to contracts that inherit it.
   - External : Similar as Public but can only be called from outside the contract - i.e. cannot be called from functions inside the contract.
+
+- For our contract to talk to another contract on the blockchain that we don't own, first we need to define an interface.
+  - Can communicate with public and external funcions from the contracts owned by others.

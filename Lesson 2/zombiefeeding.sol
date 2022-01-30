@@ -4,6 +4,25 @@ pragma solidity ^0.8.0;
 
 import "./zombiefactory.sol";
 
+// Interface to connect ot cryptoKitties to read cryptoKittie's dna
+contract KittyInterface {
+    function getKitty(uint256 _id)
+        external
+        view
+        returns (
+            bool isGestating,
+            bool isReady,
+            uint256 cooldownIndex,
+            uint256 nextActionAt,
+            uint256 siringWithId,
+            uint256 birthTime,
+            uint256 matronId,
+            uint256 sireId,
+            uint256 generation,
+            uint256 genes
+        );
+}
+
 // ZombieFeeding inherits ZombieFactory
 contract ZombieFeeding is ZombieFactory {
     function feedAndMultiply(uint256 _zombieId, uint256 _targetDna)
