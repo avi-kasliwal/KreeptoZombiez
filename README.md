@@ -82,3 +82,5 @@
 - constructor : special function that exectues only once, at the time of contract creation.
 
 - Modifiers : These are like half-functions and are used to modify other functions, usually used to check some requirements prior to function execution.
+
+- [Understand the working of onlyOwner modifier](https://cryptozombies.io/en/lesson/3/chapter/3)
