@@ -10,6 +10,9 @@ contract ZombieFactory is Ownable {
     uint256 dnaDigits = 16;
     uint256 dnaModulus = 10**dnaDigits;
 
+    // Cool Down
+    uint32 cooldownTime = 1 days;
+
     // tell front-end that some event has happened in blockchain
     event NewZombie(uint256 zombieId, string name, uint256 dna);
 
@@ -29,7 +32,9 @@ contract ZombieFactory is Ownable {
     mapping(address => uint256) ownerZombieCount;
 
     function _createZombie(string memory _name, uint256 _dna) internal {
-        zombies.push(Zombie(_name, _dna));
+        zombies.push(
+            Zombie(_name, _dna, 1, uint32(block.timestamp + cooldownTime))
+        );
         uint256 id = zombies.length - 1;
 
         zombieToOwner[id] = msg.sender;
