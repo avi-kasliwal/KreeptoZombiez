@@ -54,6 +54,13 @@
   - _Note_: In Solidity, function execution always needs to start with an external caller. A contract will just sit on the blockchain doing nothing until someone calls one of its functions. So there will always be a msg.sender
 
 - Storage Vs Memory
+
   - Storage refers to variables stored permanently on the blockchain. Memory variables are temporary, and are erased between external function calls to your contract. Think of it like your computer's hard disk vs RAM.
   - Storage -> pointer to that address
   - Memory -> creates a copy.
+
+- Function Visibility
+  - Public
+  - Private
+  - Internal : Similar as private but also accesible to contracts that inherit it.
+  - External : Similar as Public but can only be called from outside the contract - i.e. cannot be called from functions inside the contract.
