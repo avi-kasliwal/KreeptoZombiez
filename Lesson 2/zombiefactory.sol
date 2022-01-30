@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
 
 contract ZombieFactory {
@@ -50,9 +52,4 @@ contract ZombieFactory {
         uint256 randDna = _generateRandomDna(_name);
         _createZombie(_name, randDna);
     }
-}
-
-// ZombieFeeding inherits ZombieFactory
-contract ZombieFeeding is ZombieFactory {
-
 }
