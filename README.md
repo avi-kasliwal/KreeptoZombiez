@@ -48,6 +48,12 @@
 - Goal is to make the app more game-like, add multi player functionality to it. Also make a fun way of creating zombies instead of creating them randomly.
 
 - msg.sender
+
   - Global variable, available to all functions
   - address of the person or contract who called the current function.
   - _Note_: In Solidity, function execution always needs to start with an external caller. A contract will just sit on the blockchain doing nothing until someone calls one of its functions. So there will always be a msg.sender
+
+- Storage Vs Memory
+  - Storage refers to variables stored permanently on the blockchain. Memory variables are temporary, and are erased between external function calls to your contract. Think of it like your computer's hard disk vs RAM.
+  - Storage -> pointer to that address
+  - Memory -> creates a copy.
