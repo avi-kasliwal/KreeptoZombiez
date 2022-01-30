@@ -68,3 +68,7 @@
 
 - For our contract to talk to another contract on the blockchain that we don't own, first we need to define an interface.
   - Can communicate with public and external funcions from the contracts owned by others.
+
+# Lesson 3
+
+- Goal is to update out code so that key portions of the app can be updated via some functions as the contract is immutable.
