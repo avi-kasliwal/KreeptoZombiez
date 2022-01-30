@@ -93,4 +93,8 @@
   - cluster identical data types together (i.e. put them next to each other in the struct) so that Solidity can minimize the required storage space. For example, a struct with fields uint c; uint32 a; uint32 b; will cost less gas than a struct with fields uint32 a; uint c; uint32 b; because the uint32 fields are clustered together.
 
 - The keyword `now` [*`now` is now depreciated, need to use block.timestamp*] will return the current unix timestamp of the latest block (the number of seconds that have passed since January 1st 1970).
+
   - Unix time is traditionally stored in a 32-bit number. This will lead to the "Year 2038" problem, when 32-bit unix timestamps will overflow and break a lot of legacy systems
+
+- Little more on function modifiers :
+  - modifier can also take arguments.
