@@ -116,6 +116,9 @@
   - Then we have custom modifiers, which we learned about in Lesson 3: onlyOwner and aboveLevel, for example. For these we can define custom logic to determine how they affect a function.
 
 - Paybale modifier :
+
   - Special types of functions that can Receive Ether.
   - When you call an API function on a normal web server, you can't send US dollars along with your function call — nor can you send Bitcoin. But in Ethereum, because both the money (Ether), the data (transaction payload), and the contract code itself all live on Ethereum, it's possible for you to call a function and pay money to the contract at the same time.
   - We use `msg.value` to see how much Ether was sent to the contract.
+
+- You can use `transfer` function to send funds to any Ethereum _address_
