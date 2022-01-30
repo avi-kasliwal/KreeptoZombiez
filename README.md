@@ -102,3 +102,20 @@
 
 - `view` functions don't cost any gas when they're called externally by a user.
   - This is because view functions don't actually change anything on the blockchain – they only read the data.
+
+# Lesson 4
+
+- Goal is to create zombie battle functions. Learn how to get and send money between accounts.
+
+- Refresher on function modifiers :
+
+  - We have visibility modifiers that control when and where the function can be called from: private means it's only callable from other functions inside the contract; internal is like private but can also be called by contracts that inherit from this one; external can only be called outside the contract; and finally public can be called anywhere, both internally and externally.
+
+  - We also have state modifiers, which tell us how the function interacts with the BlockChain: view tells us that by running the function, no data will be saved/changed. pure tells us that not only does the function not save any data to the blockchain, but it also doesn't read any data from the blockchain. Both of these don't cost any gas to call if they're called externally from outside the contract (but they do cost gas if called internally by another function).
+
+  - Then we have custom modifiers, which we learned about in Lesson 3: onlyOwner and aboveLevel, for example. For these we can define custom logic to determine how they affect a function.
+
+- Paybale modifier :
+  - Special types of functions that can Receive Ether.
+  - When you call an API function on a normal web server, you can't send US dollars along with your function call — nor can you send Bitcoin. But in Ethereum, because both the money (Ether), the data (transaction payload), and the contract code itself all live on Ethereum, it's possible for you to call a function and pay money to the contract at the same time.
+  - We use `msg.value` to see how much Ether was sent to the contract.
