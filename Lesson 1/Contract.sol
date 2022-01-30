@@ -44,6 +44,9 @@ contract ZombieFactory {
     }
 
     function createRandomZombie(string memory _name) public {
+        // To make sure that there is no zombie created for a given account
+        require(ownerZombieCount[msg.sender] == 0);
+
         uint256 randDna = _generateRandomDna(_name);
         _createZombie(_name, randDna);
     }
