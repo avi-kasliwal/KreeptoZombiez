@@ -31,6 +31,16 @@ contract ZombieFeeding is ZombieFactory {
         kittyContract = KittyInterface(_address);
     }
 
+    // `_triggerCooldown` function
+    function _triggerCooldown(Zombie storage _zombie) internal {
+        _zombie.readyTime = uint32(block.timestamp + cooldownTime);
+    }
+
+    // 2. Define `_isReady` function here
+    function _isReady(Zombie storage _zombie) internal view returns (bool) {
+        return (_zombie.readyTime <= block.timestamp);
+    }
+
     function feedAndMultiply(
         uint256 _zombieId,
         uint256 _targetDna,
@@ -41,6 +51,9 @@ contract ZombieFeeding is ZombieFactory {
 
         // Pointer to owner's zombie.
         Zombie storage myZombie = zombies[_zombieId];
+
+        // Checking if it has cooldown or not
+        require(_isReady(myZombie));
 
         _targetDna = _targetDna % dnaModulus;
         uint256 newDna = (myZombie.dna + _targetDna) / 2;
@@ -54,16 +67,9 @@ contract ZombieFeeding is ZombieFactory {
         }
 
         _createZombie("No Name", newDna);
-    }
 
-    // `_triggerCooldown` function
-    function _triggerCooldown(Zombie storage _zombie) internal {
-        _zombie.readyTime = uint32(block.timestamp + cooldownTime);
-    }
-
-    // 2. Define `_isReady` function here
-    function _isReady(Zombie storage _zombie) internal view returns (bool) {
-        return (_zombie.readyTime <= block.timestamp);
+        // Give it a cooldown for 1 day.
+        _triggerCooldown(myZombie);
     }
 
     function feedOnKitty(uint256 _zombieId, uint256 _kittyId) public {
