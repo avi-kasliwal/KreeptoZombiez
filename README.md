@@ -72,3 +72,13 @@
 # Lesson 3
 
 - Goal is to update out code so that key portions of the app can be updated via some functions as the contract is immutable.
+
+- Ownable : make contract ownable so that only we can call functions to update key parts of the contract. In this tutorial we are doing so using Oqnable contract from OpenZeppelin library. This contract allows :
+
+  - set owner to msg.sender with the help of the custroctor
+  - adds onlyOwner modifier, which restricts certain functions to only the owner
+  - allows to transfer ownership.
+
+- constructor : special function that exectues only once, at the time of contract creation.
+
+- Modifiers : These are like half-functions and are used to modify other functions, usually used to check some requirements prior to function execution.

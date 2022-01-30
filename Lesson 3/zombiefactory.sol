@@ -2,7 +2,11 @@
 
 pragma solidity ^0.8.0;
 
-contract ZombieFactory {
+// 1. Import Ownable
+import "./ownable.sol";
+
+// 2. Inherits ownable:
+contract ZombieFactory is Ownable {
     uint256 dnaDigits = 16;
     uint256 dnaModulus = 10**dnaDigits;
 
