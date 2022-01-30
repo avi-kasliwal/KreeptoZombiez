@@ -97,4 +97,8 @@
   - Unix time is traditionally stored in a 32-bit number. This will lead to the "Year 2038" problem, when 32-bit unix timestamps will overflow and break a lot of legacy systems
 
 - Little more on function modifiers :
+
   - modifier can also take arguments.
+
+- `view` functions don't cost any gas when they're called externally by a user.
+  - This is because view functions don't actually change anything on the blockchain – they only read the data.
