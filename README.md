@@ -122,3 +122,8 @@
   - We use `msg.value` to see how much Ether was sent to the contract.
 
 - You can use `transfer` function to send funds to any Ethereum _address_
+
+- Random number generation via keccak256
+  - The best source of randomness we have in Solidity is the keccak256 hash function.
+  - `uint(keccak256(abi.encodePacked(now, msg.sender, randNonce)))`
+  - This is vulnerable, [In detail explanation here...](https://cryptozombies.io/en/lesson/4/chapter/4)
