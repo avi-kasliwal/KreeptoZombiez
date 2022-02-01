@@ -31,20 +31,18 @@ contract ZombieHelper is ZombieFeeding {
     // Change name if lvl > 1
     function changeName(uint256 _zombieId, string calldata _newName)
         external
+        ownerOf(_zombieId)
         aboveLevel(2, _zombieId)
     {
-        require(msg.sender == zombieToOwner[_zombieId]);
-
         zombies[_zombieId].name = _newName;
     }
 
     // Change DNA if lvl > 20
     function changeDna(uint256 _zombieId, uint256 _newDna)
         external
+        ownerOf(_zombieId)
         aboveLevel(20, _zombieId)
     {
-        require(msg.sender == zombieToOwner[_zombieId]);
-
         zombies[_zombieId].dna = _newDna;
     }
 
